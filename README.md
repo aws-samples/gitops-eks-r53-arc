@@ -1,4 +1,4 @@
-# gitops-eks-r53-arc (WIP)
+# gitops-eks-r53-arc
 
 ## Deploy the solution
 
@@ -379,6 +379,19 @@ cd ../infra
 cdk destroy --all --force
 ```
 
-## Content Security Legal Disclaimer
+## Feedback/bug reports
+
+Contributions are welcome, both in form of issues or PRs. Please refer to [CONTRIBUTING](CONTRIBUTING.md) for additional details.
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+### Content Security Legal Disclaimer
 
 > The sample code; software libraries; command line tools; proofs of concept; templates; or other related technology (including any of the foregoing that are provided by our personnel) is provided to you as AWS Content under the AWS Customer Agreement, or the relevant written agreement between you and AWS (whichever applies). You should not use this AWS Content in your production accounts, or on production or other critical data. You are responsible for testing, securing, and optimizing the AWS Content, such as sample code, as appropriate for production grade use based on your specific quality control practices and standards. Deploying AWS Content may incur AWS charges for creating or using AWS chargeable resources, such as running Amazon EC2 instances or using Amazon S3 storage.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
+

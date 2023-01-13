@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: microservices-demo
+  namespace: flux-system
+spec:
+  interval: 30s 
+  url: https://github.com/microservices-demo/microservices-demo
+  ref:
+    branch: master

@@ -1,0 +1,11 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+id_rsa*
+gitops-repo
+.DS_Store
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out

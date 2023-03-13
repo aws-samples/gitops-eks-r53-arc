@@ -14,7 +14,7 @@
 Clone the [solution repository from AWS Samples](ttps://github.com/aws-samples/gitops-eks-r53-arc) and navigate to the parent folder:
 
 ```bash
-git clone git@github.com:aws-samples/gitops-eks-r53-arc.git
+git clone https://github.com/aws-samples/gitops-eks-r53-arc.git
 cd gitops-eks-r53-arc
 ```
 

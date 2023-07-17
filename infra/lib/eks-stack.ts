@@ -19,11 +19,11 @@ export class EKSStack extends Stack {
         const cluster = new eks.Cluster(this, `EKSCluster${props?.env?.region}`, {
             clusterName: `eks-cluster-${props?.env?.region}`,
             mastersRole: clusterAdmin,
-            version: eks.KubernetesVersion.V1_23,
+            version: eks.KubernetesVersion.V1_24,
             kubectlLayer: new KubectlLayer(this, 'KubectlLayer'),
             defaultCapacity: 0,
             albController: {
-                version: eks.AlbControllerVersion.V2_4_1
+                version: eks.AlbControllerVersion.V2_5_1
             },
             clusterLogging: [eks.ClusterLoggingTypes.API, eks.ClusterLoggingTypes.AUDIT, eks.ClusterLoggingTypes.AUTHENTICATOR, eks.ClusterLoggingTypes.CONTROLLER_MANAGER, eks.ClusterLoggingTypes.SCHEDULER]
         });
@@ -45,7 +45,7 @@ export class EKSStack extends Stack {
             description: 'ARN of the VPC created for EKS'
         });
 
-        NagSuppressions.addStackSuppressions(this, [{ id: 'AwsSolutions-L1', reason: 'Internal EKS Construct' }, { id: 'AwsSolutions-IAM4', reason: 'Managed IAM Policies' }, { id: 'AwsSolutions-IAM5', reason: 'Wildcard policies for AWS Load Balancer Controller' }, { id: 'AwsSolutions-EKS1', reason: 'Public access for demo purposes' }, { id: 'AwsSolutions-AS3', reason: 'Notifications disabled' }, { id: 'AwsSolutions-VPC7', reason: 'Sample code for demo purposes, flow logs disabled' }], true);
+        NagSuppressions.addStackSuppressions(this, [{ id: 'AwsSolutions-L1', reason: 'Internal EKS Construct' }, { id: 'AwsSolutions-IAM4', reason: 'Managed IAM Policies' }, { id: 'AwsSolutions-IAM5', reason: 'Wildcard policies for AWS Load Balancer Controller' }, { id: 'AwsSolutions-EKS1', reason: 'Public access for demo purposes' }, { id: 'AwsSolutions-AS3', reason: 'Notifications disabled' }, { id: 'AwsSolutions-VPC7', reason: 'Sample code for demo purposes, flow logs disabled' }, {id: 'AwsSolutions-EC26', reason: 'Sample code for demo purposes, EBS encryption disabled'}], true);
 
     }
 }

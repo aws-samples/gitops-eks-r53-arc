@@ -122,8 +122,7 @@ export class Route53ApplicationRecoveryController extends Construct {
                 readinessCheckName: `${resourceSetName}-ReadinessCheck`,
                 resourceSetName: resourceSetName
             });
-
-            newReadinessCheck.addDependsOn(newResourceSet);
+            newReadinessCheck.addDependency(newResourceSet);
         });
 
         this._recoveryGroup = new rr.CfnRecoveryGroup(this, 'RecoveryGroup', {
@@ -146,7 +145,7 @@ export class Route53ApplicationRecoveryController extends Construct {
                 healthCheckTags: [{ key: 'Name', value: `${this.controlPanel.name}-${cell.cellName}` }]
             });
 
-            healthCheck.addDependsOn(routingControl);
+            healthCheck.addDependency(routingControl);
 
             new CfnOutput(this, `${cell.cellName}HealthCheckId`, {
                 value: healthCheck.attrHealthCheckId,
